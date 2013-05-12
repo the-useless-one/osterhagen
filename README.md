@@ -1,5 +1,60 @@
 # Osterhagen
 
+						  MMM                                         
+						MMMMMMM:                                      
+						MMMMMMM:                                      
+						MMMMMMM:                                      
+						MMMMMMM:                                      
+					   .M     M:                                      
+
+					  MMM=   MM                                       
+				   MMMMMMM   MMMMM                                    
+				MMMMMMMMMM   MMMMMMM                                  
+			 MMMMMMMMMMMMM   MMMMMMM  MM.                             
+		  =MMMMMMMMMMMMMMM   MMMMMMM  MMMMM=                          
+	   .MMMMMMMMMMMMMMMMMM   MMMMMMM  MMMMMM MM                       
+	 MMMMMMMMMMMMMMMMMMMMM   MMMMMMM  MMMMMM MMMMM                    
+	MMMMMMMMMMMMMMMMMMMMMM   MMMMMMM  MMMMMM MMMMM$                   
+	 MMMMMMMMMMMMMMMMMMMMM   MMMMMMM  MMMMMM MMMMM                    
+	 MMMMMMMMMMMMMMMMMMMMM   MMMMMMM  MMMMMM MMMMM                    
+	 MMMMMMMMMMMMMMMMMMMMM   MMMMMMM  MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM  MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM  MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM  MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM  MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM  MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM  MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM  MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM  MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM  MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM  MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM  MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM  MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM  MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM  MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM  MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM. MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM. MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM, MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM, MMMMMM MMMMM                    
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM: MMMMMM MMMMM       ____      _            _                             
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM: MMMMMM MMMMM      / __ \    | |          | |                            
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM~ MMMMMM MMMMM     | |  | |___| |_ ___ _ __| |__   __ _  __ _  ___ _ __   
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM~ MMMMMM MMMMM     | |  | / __| __/ _ \ '__| '_ \ / _` |/ _` |/ _ \ '_ \  
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMM+ MMMMMM MMMMM     | |__| \__ \ ||  __/ |  | | | | (_| | (_| |  __/ | | | 
+	 MMMMMMMMD  MMMMMMMMMM   MMMMMMMZ MMMMMMMMMMMM      \____/|___/\__\___|_|  |_| |_|\__,_|\__, |\___|_| |_| 
+	 MMMMMMMMMMMMMMMMMMMMM   MMMMMMMM MMMMMMMMMMMM                                           __/ |            
+	 MMMMMMMMMMMMMMMMMMMMM   MMMMMMMMMMMMMMMMMMMMM                                          |___/                                
+	 MMMMMMMMMMMMMMMMMMMMM   MMMMMMMMMMMMMMMMMMMMM                    
+	$MMMMMMMMMMMMMMMMMMMMM   MMMMMMMMMMMMMMMMMMMMMZ                   
+	MMMMMMMMMMMMMMMMMMMMMM   MMMMMMMMMMMMMMMMMMMMM=                   
+	  MMMMMMMMMMMMMMMMMMMM   MMMMMMMMMMMMMMMMMMM                      
+		 NMMMMMMMMMMMMMMMM   MMMMMMMMMMMMMMMM                         
+			IMMMMMMMMMMMMM   MMMMMMMMMMMMM                            
+				MMMMMMMMMM   MMMMMMMMMM                               
+				   MMMMMMM   MMMMMMM                                  
+					   MMM    MMMM                                     
+
 To be used if the suffering of the human race is so great, so without hope,
 that this becomes the final option. 
 
@@ -21,6 +76,8 @@ parties wants to.
 ## DISCLAIMER
 
 I cannot be held responsible if someone blows up the Earth using this script.
+And it goes without saying that I'm not affiliated in any way with the BBC,
+Doctor Who, David Tennant etc.
 
 ## REQUIREMENTS
 
