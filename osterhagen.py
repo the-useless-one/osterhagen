@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 #	-*- coding: utf8 -*-
 
-import sys
+import Crypto
+from Crypto.Signature import PKCS1_v1_5
+from Crypto.Hash import SHA256
+from Crypto.PublicKey import RSA
+import base64
+import encoding
 import arguments
 import polynomials
 import secret
@@ -13,17 +18,32 @@ def create_keys(args, arg_parser):
 	# We build the polynomial used to hide the secret
 	secret_polynomial = polynomials.create_polynomial(args)
 
+	# We build the public/private keys used to sign/verify the Osterhagen keys
+	pub_priv_keys = RSA.generate(2048)
+
+	# We save the public key
+	public_key_file = open('public_key.pem', 'w')
+	pub_key = encoding.bytes_to_string(pub_priv_keys.publickey().exportKey())
+	public_key_file.write(pub_key)
+	public_key_file.close()
+
+	# We create the signer
+	signer = PKCS1_v1_5.new(pub_priv_keys)
+
 	# For every party, we create a secret part,
 	# and we save it in a file
 	for x in range(1, args.total_parties + 1):
 		osterhagen_key = polynomials.evaluate_polynomial(
 				secret_polynomial, x)
-		secret.save_osterhagen_key(x, osterhagen_key, args.hmac_key)
+		secret.save_osterhagen_key(x, osterhagen_key, signer)
 
 def recover_secret(args, arg_parser):
-	raise NotImplementedError
 	abscissa_list = []
 	ordinate_list = []
+
+	# We open the public key file
+	publickey = RSA.importKey(args.public_key.read())
+	signature_verifier = PKCS1_v1_5.new(publickey)
 
 	# For every file
 	for osterhagen_key_file in args.key_files:
@@ -37,16 +57,16 @@ def recover_secret(args, arg_parser):
 		# We retrieve the key's number, the key, and the signature
 		x = int(osterhagen_key_content[0])
 		osterhagen_key = int(osterhagen_key_content[1])
-		signature = osterhagen_key_content[2].rstrip()
+		signature = base64.b64decode(osterhagen_key_content[2].rstrip())
 
 		# We compute the signature, to check if the file was tampered with
-		check_signature = secret.compute_signature(x, osterhagen_key,
-				args.hmac_key)
+		hashed_message = bytes('{0}{1}'.format(x, osterhagen_key), 'utf8')
+		h = SHA256.new(hashed_message)
+
 		# If the signatures don't match, we raise an error'
-		if (signature != check_signature):
-			raise ValueError(('signatures don\'t match in key number {0}\n'\
-					+ 'expected value: {1}\n'\
-					+ 'received: {2}').format(x, check_signature, signature))
+		if (not signature_verifier.verify(h, signature)):
+			error_msg = 'signatures don\'t match in key number {0}\n'.format(x)
+			raise ValueError(error_msg)
 		# Otherwise, we get the abscissa/ordinate needed to rebuild the
 		# polynomial
 		else:
@@ -67,8 +87,9 @@ def main():
 	arg_parser = arguments.create_argument_parser()
 
 	# We parse the argument
-	args = arg_parser.parse_args(sys.argv[1:])
+	args = arg_parser.parse_args()
 
+	# We call the suitable function
 	args.func(args, arg_parser)
 
 if __name__ == '__main__':

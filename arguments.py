@@ -27,12 +27,6 @@ def create_argument_parser():
 			type=int,
 			help='secret being shared by the Osterhagen keys')
 
-	# The user must specify a HMAC key
-	arg_parser_key_creation.add_argument('--hmac-key', required=True,
-			dest='hmac_key',
-			type=str,
-			help='HMAC key used to sign the Osterhagen keys')
-
 	# The user can specify the number of secret parts that
 	# will be generated
 	arg_parser_key_creation.add_argument('-n', default=5, dest='total_parties',
@@ -47,12 +41,6 @@ def create_argument_parser():
 			help='how many Osterhagen keys should be necessary to recover\
 					the whole secret (default: %(default)s)')
 
-	# The user can specify what size will the secret parts be
-	arg_parser_key_creation.add_argument('-p', default=100, dest='size',
-			type=int,
-			help='size in bits of the Osterhagen keys\
-					(default: %(default)s)')
-
 	# We create the subparser for the secret recovery
 	arg_parser_secret_recovery = subparsers.add_parser('recover-secret',
 			description=program_description)
@@ -66,10 +54,11 @@ def create_argument_parser():
 			help='list of files containing the Osterhagen keys')
 
 	# The user must specify a HMAC key
-	arg_parser_secret_recovery.add_argument('--hmac-key', required=True,
-			dest='hmac_key',
-			type=str,
-			help='HMAC key used to sign the Osterhagen keys')
+	arg_parser_secret_recovery.add_argument('--public-key', required=True,
+			dest='public_key',
+			type=argparse.FileType('r'),
+			help='RSA public key used to verify the Osterhagen keys\'\
+					signature')
 
 	return arg_parser
 
@@ -100,15 +89,5 @@ def process_arguments_key_creation(args, arg_parser):
 				+ '(at least two parties required to recover '\
 				+ 'the secret): {1}'
 		error_msg = error_msg.format('-k', args.needed_parties)
-		arg_parser.error(error_msg)
-
-	# The parameters must be less than the given size
-	args.bound = 2**args.size
-	if (args.secret >= args.bound or
-			args.total_parties >= args.bound or
-			args.needed_parties >= args.bound):
-		error_msg = 'every parameter should be less than '\
-				+ '{0} bits'
-		error_msg = error_msg.format(args.size)
 		arg_parser.error(error_msg)
 
